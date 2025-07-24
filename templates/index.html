@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        background-image: url('/static/images/library.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        backdrop-filter: brightness(0.9);
+    }
+
+    .hero-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h1, .lead {
+        color: #fff;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+</style>
+
+<div class="hero-section">
+    <h1 class="mb-4">Digital Library</h1>
+    <p class="lead text-muted mb-5"></p>
+    <div class="row justify-content-center">
+        <div class="col-md-4 d-flex justify-content-center mb-3">
+            <div class="card hero-card p-4">
+                <h4 class="mb-3">Existing user</h4>
+                <a href="{{ url_for('login') }}" class="btn btn-primary w-100 mt-auto">Login</a>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center mb-3">
+            <div class="card hero-card p-4">
+                <h4 class="mb-3">New user</h4>
+                <a href="{{ url_for('signup') }}" class="btn btn-primary w-100 mt-auto">Signup</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
