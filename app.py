@@ -83,7 +83,7 @@ def init_db():
     cursor.execute("SELECT * FROM users WHERE role='admin'")
     if cursor.fetchone() is None:
         cursor.execute("INSERT INTO users (name,email,password,role) VALUES (?,?,?,?)",
-                       ("Admin", "digitallibraryadmin@gmail.com", "srit@123", "admin"))
+                       ("Admin", "sritadmin@gmail.com", "admin123", "admin"))
 
     conn.commit()
     conn.close()
